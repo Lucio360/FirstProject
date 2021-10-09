@@ -15,28 +15,36 @@ public:
 	// Sets default values for this actor's properties
 	AFloater();
 
+	
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "ActorMeshComponents")
 	UStaticMeshComponent* StaticMesh;
 
 	//Location use by SetActorLocation() when BeginPlay() is called
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "FloaterVectors")
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "FloaterVariables")
 	FVector InitialLocation;
 
 	// Location of the actor when dragged in from the editor
-	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = "FloaterVectors")
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = "FloaterVariables")
 	FVector PlacedLocation;
 
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "FloaterVectors")
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "FloaterVariables")
 	FVector WorldOrigin;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FloaterVectors")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FloaterVariables")
 	FVector InitialDirection;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FloaterVectors")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FloaterVariables")
 	bool bShouldFloat;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "FloaterVectors")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "FloaterVariables")
 	bool bInitializeFloaterLocations;
+
+	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category = "FloaterVariables")
+	FVector InitialForce;
+
+	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category = "FloaterVariables")
+	FVector InitialTorque;
 
 protected:
 	// Called when the game starts or when spawned
